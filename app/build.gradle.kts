@@ -35,11 +35,13 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
     implementation("androidx.appcompat:appcompat:1.1.0")
     implementation("androidx.core:core-ktx:1.3.0")
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
     implementation("com.apollographql.apollo:apollo-runtime:2.5.3")
     implementation("com.apollographql.apollo:apollo-coroutines-support:2.5.3")
+    implementation("com.apollographql.apollo:apollo-http-cache:2.5.3")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.2.0")
     implementation("androidx.recyclerview:recyclerview:1.1.0")
     implementation("io.coil-kt:coil:0.11.0")
