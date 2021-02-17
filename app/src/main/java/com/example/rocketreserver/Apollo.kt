@@ -2,10 +2,13 @@ package com.example.rocketreserver
 
 import android.content.Context
 import android.os.Looper
-import com.apollographql.apollo.ApolloClient
-import com.apollographql.apollo.cache.http.ApolloHttpCache
-import com.apollographql.apollo.cache.http.DiskLruHttpCacheStore
-import com.apollographql.apollo.subscription.WebSocketSubscriptionTransport
+import com.apollographql.apollo3.ApolloClient
+import com.apollographql.apollo3.cache.http.ApolloHttpCache
+import com.apollographql.apollo3.cache.http.DiskLruHttpCacheStore
+import com.apollographql.apollo3.cache.normalized.CacheKeyResolver
+import com.apollographql.apollo3.cache.normalized.MemoryCacheFactory
+import com.apollographql.apollo3.cache.normalized.lru.LruNormalizedCacheFactory
+import com.apollographql.apollo3.subscription.WebSocketSubscriptionTransport
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
@@ -39,6 +42,7 @@ fun apolloClient(context: Context): ApolloClient {
     instance = ApolloClient.builder()
         .serverUrl("https://apollo-fullstack-tutorial.herokuapp.com/graphql")
         .httpCache(ApolloHttpCache(cacheStore))
+        .normalizedCache(MemoryCacheFactory(maxSizeBytes = 1024*1024), CacheKeyResolver.DEFAULT)
         .subscriptionTransportFactory(WebSocketSubscriptionTransport.Factory("wss://apollo-fullstack-tutorial.herokuapp.com/graphql", okHttpClient))
         .okHttpClient(okHttpClient)
         .build()

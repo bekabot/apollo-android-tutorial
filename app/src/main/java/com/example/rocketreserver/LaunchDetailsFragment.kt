@@ -10,8 +10,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.api.load
-import com.apollographql.apollo.coroutines.toDeferred
-import com.apollographql.apollo.exception.ApolloException
+import com.apollographql.apollo3.coroutines.toDeferred
+import com.apollographql.apollo3.exception.ApolloException
 import com.example.rocketreserver.databinding.LaunchDetailsFragmentBinding
 
 class LaunchDetailsFragment : Fragment() {

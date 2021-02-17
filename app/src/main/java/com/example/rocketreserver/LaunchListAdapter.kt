@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
 import com.example.rocketreserver.databinding.LaunchItemBinding
 
-class LaunchListAdapter(val launches: List<LaunchListQuery.Launch>) :
+class LaunchListAdapter(val launches: List<LaunchListQuery.Data.Launches.Launches>) :
     RecyclerView.Adapter<LaunchListAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: LaunchItemBinding) : RecyclerView.ViewHolder(binding.root)
@@ -21,7 +21,7 @@ class LaunchListAdapter(val launches: List<LaunchListQuery.Launch>) :
     }
 
     var onEndOfListReached: (() -> Unit)? = null
-    var onItemClicked: ((LaunchListQuery.Launch) -> Unit)? = null
+    var onItemClicked: ((LaunchListQuery.Data.Launches.Launches) -> Unit)? = null
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val launch = launches.get(position)

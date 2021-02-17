@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.apollographql.apollo.api.Input
-import com.apollographql.apollo.coroutines.toDeferred
+import com.apollographql.apollo3.api.Input
+import com.apollographql.apollo3.coroutines.toDeferred
 import com.example.rocketreserver.databinding.LoginFragmentBinding
 import java.lang.Exception
 
